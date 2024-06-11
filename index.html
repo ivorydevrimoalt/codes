@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta property="og:title" content="Copyable Unchangeable Value">
+  <meta property="og:description" content="This value cannot be changed">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/your-page">  <title>Copyable Unchangeable Value</title>
+</head>
+<body>
+  <h1>This text appears above the value</h1>
+  <p>This value cannot be changed: <span id="unchangeable-value">UNCHANGEABLE_VALUE</span></p>
+  <p>This text appears below the value</p>
+
+  <script>
+    // Script to copy the unchangeable value to clipboard
+    const copyButton = document.createElement('button');
+    copyButton.textContent = 'Copy Value';
+    copyButton.addEventListener('click', () => {
+      const valueToCopy = document.getElementById('unchangeable-value').textContent;
+      navigator.clipboard.writeText(valueToCopy);
+      alert('Value copied to clipboard!');
+    });
+
+    document.body.appendChild(copyButton);
+  </script>
+</body>
+</html>
